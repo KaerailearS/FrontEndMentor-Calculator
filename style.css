@@ -76,6 +76,7 @@ body {
 
 .theme-label {
   font-size: 0.75rem;
+  color: var(--calc-color);
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-right: 1rem;
@@ -94,7 +95,7 @@ body {
   justify-content: space-between;
   width: 67px;
   font-size: 0.75rem;
-  color: var(--text-color);
+  color: var(--calc-color);
 }
 
 .toggle-slider {
