@@ -1,0 +1,185 @@
+:root {
+  font-family: 'League Spartan', sans-serif;
+}
+
+/* Default Theme (theme1) */
+.calculator.theme1 {
+  --bg-color: hsl(222, 26%, 31%);
+  --text-color: black;
+  --calc-color: white;
+  --calc-bg: hsl(223, 31%, 20%);
+  --display-bg: hsl(224, 36%, 15%);
+  --key-bg: hsl(30, 25%, 89%);
+  --key-special-bg: hsl(225, 21%, 49%);
+  --key-equals-bg: hsl(6, 63%, 50%);
+}
+
+/* Theme 2 */
+.calculator.theme2 {
+  --bg-color: hsl(0, 0%, 90%);
+  --text-color: black;
+  --calc-color: black;
+  --calc-bg: hsl(0, 5%, 81%);
+  --display-bg: hsl(0, 0%, 93%);
+  --key-bg: hsl(45, 7%, 89%);
+  --key-special-bg: hsl(185, 42%, 37%);
+  --key-equals-bg: hsl(25, 98%, 40%);
+}
+
+/* Theme 3 */
+.calculator.theme3 {
+  --bg-color: hsl(268, 75%, 9%);
+  --text-color: hsl(52, 100%, 62%);
+  --calc-color: hsl(52, 100%, 62%);
+  --calc-bg: hsl(268, 71%, 12%);
+  --display-bg: hsl(268, 55%, 26%);
+  --key-bg: hsl(282, 82%, 18%);
+  --key-special-bg: hsl(281, 89%, 26%);
+  --key-equals-bg: hsl(176, 100%, 44%);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  width: 320px;
+  padding: 1rem;
+  background-color: var(--calc-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+}
+
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--calc-color);
+}
+
+.theme-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.theme-label {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  align-self: center;
+}
+
+.theme-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.toggle-numbers {
+  display: flex;
+  justify-content: space-between;
+  width: 67px;
+  font-size: 0.75rem;
+  color: var(--text-color);
+}
+
+.toggle-slider {
+  background: var(--display-bg);
+  border-radius: 20px;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+  height: 20px;
+  position: relative;
+}
+
+.toggle-slider label {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-slider input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.toggle-slider span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  background: transparent;
+  opacity: 0;
+  z-index: 1;
+}
+
+.toggle-slider input:checked + span {
+  background: var(--key-equals-bg);
+  opacity: 1;
+}
+
+.display {
+  background-color: var(--display-bg);
+  padding: 1rem;
+  text-align: right;
+  font-size: 2rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  min-height: 2.5rem;
+  color: var(--calc-color);
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.keypad button {
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-family: 'League Spartan';
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--key-bg);
+  color: var(--text-color);
+  box-shadow: 0 4px var(--key-shadow);
+  transition: background 0.2s ease;
+}
+
+/* RESET and EQUALS span 2 columns */
+.keypad .key-reset {
+  grid-column: span 2;
+  background: var(--key-special-bg);
+  color: var(--text-light);
+}
+
+.keypad .key-equals {
+  grid-column: span 2;
+  background: var(--key-equals-bg);
+  color: var(--text-light);
+}

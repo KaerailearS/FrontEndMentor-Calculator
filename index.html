@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+
+<!--basic layout:
+top left: "calc" top right: theme selector with 3 different settings
+underneath: input/result line
+button division:
+"7" "8" "9" "DEL"
+"4" "5" "6" "+"
+"1" "2" "3" "-"
+"." "0" "/" "x"
+"RESET" "=(equal)"-->
+
+<body>
+  <div class="calculator theme1">
+    <div class="calc-header js-div1">
+      <p class="title">calc</p>
+      <div class="theme-row">
+        <span class="theme-label">Theme</span>
+        <div class="theme-toggle">
+          <div class="toggle-numbers">
+            <span>1</span><span>2</span><span>3</span>
+          </div>
+          <div class="toggle-slider">
+            <label><input type="radio" name="theme" value="theme1" checked /><span></span></label>
+            <label><input type="radio" name="theme" value="theme2" /><span></span></label>
+            <label><input type="radio" name="theme" value="theme3" /><span></span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="display js-display">
+    </div>
+
+    <div class="keypad js-keypad">
+      <button class="key js-button js-input-button">7</button>
+      <button class="key js-button js-input-button">8</button>
+      <button class="key js-button js-input-button">9</button>
+      <button class="key key-del js-button js-del-button">DEL</button>
+
+      <button class="key js-button js-input-button">4</button>
+      <button class="key js-button js-input-button">5</button>
+      <button class="key js-button js-input-button">6</button>
+      <button class="key js-button js-input-button">+</button>
+
+      <button class="key js-button js-input-button">1</button>
+      <button class="key js-button js-input-button">2</button>
+      <button class="key js-button js-input-button">3</button>
+      <button class="key js-button js-input-button">-</button>
+
+      <button class="key js-button js-input-button">.</button>
+      <button class="key js-button js-input-button">0</button>
+      <button class="key js-button js-input-button">/</button>
+      <button class="key js-button js-input-button">*</button>
+
+      <button class="key key-reset js-button js-reset-button">RESET</button>
+      <button class="key key-equals js-button js-equals-button">=</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
